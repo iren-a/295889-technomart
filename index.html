@@ -277,7 +277,7 @@
              Вы можете забрать товар сами,<br>
              заехав в наш офис:
           </p>
-          <a class="maps" href="#">
+          <a class="maps js-open-map" href="#">
             <img src="img/map-small.png" width="300" height="158" alt="Карта">
           </a>
           <a class="btn" href="#">Заблудились? Напишите нам!</a>
@@ -358,7 +358,7 @@
         <div class="top-container clearfix">
           <label class="name">
             Ваше имя:
-            <input class="input-name" type="text" name="name" placeholder="Представьтесь, пожалуйста">
+            <input class="input-name" type="text" name="my-name" placeholder="Представьтесь, пожалуйста">
           </label>
           <label class="email">
             Ваш e-mail:
@@ -379,5 +379,66 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426" width="940" height="446" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div>
+    <script>
+      var link = document.querySelector(".about-us-contacts .btn");
+      var popup = document.querySelector(".modal-content-feedback");
+      var close = popup.querySelector(".modal-content-feedback .close");
+      var myName = popup.querySelector(".input-name");
+      var email = popup.querySelector(".input-email");
+      var message = popup.querySelector(".input-message");
+
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        popup.classList.add("modal-content-show");
+        myName.focus();
+      });
+
+      close.addEventListener("click", function(event) {
+        event.preventDefault();
+        popup.classList.remove("modal-content-show");
+        popup.classList.remove("modal-error");
+      });
+
+      popup.addEventListener("submit", function(event) {
+        if (!myName.value || !email.value || !message.value) {
+          event.preventDefault();
+          popup.classList.remove("modal-error");
+          popup.offsetWidth = popup.offsetWidth;
+          popup.classList.add("modal-error");
+        }
+      });
+
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 27) {
+          if (popup.classList.contains("modal-content-show")) {
+            popup.classList.remove("modal-content-show");
+            popup.classList.remove("modal-error");
+          }
+        }
+      });
+
+      var mapOpen = document.querySelector(".js-open-map");
+      var mapPopup = document.querySelector(".modal-content-map");
+      var mapClose = mapPopup.querySelector(".modal-content-map .close");
+
+      mapOpen.addEventListener("click", function(event) {
+        event.preventDefault();
+        mapPopup.classList.add("modal-content-show");
+      });
+
+      mapClose.addEventListener("click", function(event) {
+        event.preventDefault();
+        mapPopup.classList.remove("modal-content-show");
+      });
+
+      window.addEventListener("keydown", function(event) {
+        if (event.keyCode === 27) {
+          if (mapPopup.classList.contains("modal-content-show")) {
+            mapPopup.classList.remove("modal-content-show");
+          }
+        }
+      });
+
+    </script>
   </body>
 </html>
