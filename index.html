@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&amp;subset=cyrillic">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-min.css">
   </head>
   <body>
     <header class="main-header">
@@ -87,7 +87,7 @@
         <div class="promo-slider">
           <input type="radio" id="btn-1" name="toggle" checked>
           <input type="radio" id="btn-2" name="toggle">
-          <div class="controls">
+          <div class="promo-slider-controls">
             <label for="btn-1"></label>
             <label for="btn-2"></label>
           </div>
@@ -96,13 +96,13 @@
               <h4>Перфораторы</h4>
               <p>Настроящие мужские игрушки</p>
               <img src="img/slider-img-1.jpg" width="620" height="266" alt="Перфораторы">
-              <a class="btn" href="#">Открыть каталог</a>
+              <a class="btn" href="catalog.html">Открыть каталог</a>
             </div>
             <div class="promo-slide">
               <h4>Дрели</h4>
               <p>Соседям на радость!</p>
               <img src="img/slider-img-2.jpg" width="620" height="266" alt="Дрели">
-              <a class="btn" href="#">Открыть каталог</a>
+              <a class="btn" href="catalog.html">Открыть каталог</a>
             </div>
             <a class="prev">Назад</a>
             <a class="next">Вперед</a>
@@ -215,7 +215,7 @@
             <input type="radio" id="btn-delivery" name="select" checked>
             <input type="radio" id="btn-guarantee" name="select">
             <input type="radio" id="btn-credit" name="select">
-            <div class="controls">
+            <div class="servise-slider-controls">
               <label for="btn-delivery">Доставка</label>
               <label for="btn-guarantee">Гарантия</label>
               <label for="btn-credit">Кредит</label>
@@ -379,66 +379,6 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6037999040354!2d30.322010416394033!3d59.938716271971415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2sBolshaya+Konyushennaya+ul.%2C+19%2C+Sankt-Peterburg%2C+Russia%2C+191186!5e0!3m2!1sen!2s!4v1441888483426" width="940" height="446" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div>
-    <script>
-      var link = document.querySelector(".about-us-contacts .btn");
-      var popup = document.querySelector(".modal-content-feedback");
-      var close = popup.querySelector(".modal-content-feedback .close");
-      var myName = popup.querySelector(".input-name");
-      var email = popup.querySelector(".input-email");
-      var message = popup.querySelector(".input-message");
-
-      link.addEventListener("click", function(event) {
-        event.preventDefault();
-        popup.classList.add("modal-content-show");
-        myName.focus();
-      });
-
-      close.addEventListener("click", function(event) {
-        event.preventDefault();
-        popup.classList.remove("modal-content-show");
-        popup.classList.remove("modal-error");
-      });
-
-      popup.addEventListener("submit", function(event) {
-        if (!myName.value || !email.value || !message.value) {
-          event.preventDefault();
-          popup.classList.remove("modal-error");
-          popup.offsetWidth = popup.offsetWidth;
-          popup.classList.add("modal-error");
-        }
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (popup.classList.contains("modal-content-show")) {
-            popup.classList.remove("modal-content-show");
-            popup.classList.remove("modal-error");
-          }
-        }
-      });
-
-      var mapOpen = document.querySelector(".js-open-map");
-      var mapPopup = document.querySelector(".modal-content-map");
-      var mapClose = mapPopup.querySelector(".modal-content-map .close");
-
-      mapOpen.addEventListener("click", function(event) {
-        event.preventDefault();
-        mapPopup.classList.add("modal-content-show");
-      });
-
-      mapClose.addEventListener("click", function(event) {
-        event.preventDefault();
-        mapPopup.classList.remove("modal-content-show");
-      });
-
-      window.addEventListener("keydown", function(event) {
-        if (event.keyCode === 27) {
-          if (mapPopup.classList.contains("modal-content-show")) {
-            mapPopup.classList.remove("modal-content-show");
-          }
-        }
-      });
-
-    </script>
+    <script src="js/popup-min.js"></script>
   </body>
 </html>

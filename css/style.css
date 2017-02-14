@@ -402,6 +402,7 @@ body {
 .sort-by li,
 .pages li {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .main-header-navigation a,
@@ -608,7 +609,7 @@ body {
 .main-content .filter,
 .goods .sort,
 .goods .pages {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
 }
 
@@ -713,11 +714,11 @@ body {
 .price-controls {
   font-size: 0;
   width: 220px;
-  vertical-align: middle;
 }
 
 .price-controls input {
   display: inline-block;
+  vertical-align: middle;
   width: 95px;
   padding-left: 0;
   padding-right: 0;
@@ -733,6 +734,7 @@ body {
 
 .price-controls span {
   display: inline-block;
+  vertical-align: middle;
   text-align: center;
   font-size: 17px;
   width: 30px;
@@ -839,7 +841,7 @@ h4 {
 
 .promo-slider p {
   color: #ffffff;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: normal;
@@ -978,7 +980,7 @@ h4 {
 .promo-slide h4,
 .promo-slide p,
 .promo-slide .btn,
-.promo-slider .controls{
+.promo-slider-controls{
   position: relative;
   z-index: 1;
 }
@@ -1020,7 +1022,7 @@ h4 {
   transform: rotate(45deg);
 }
 
-.promo-slider .controls {
+.promo-slider-controls {
   position: absolute;
   width: 120px;
   height: 20px;
@@ -1030,15 +1032,15 @@ h4 {
   text-align: center;
 }
 
-.promo-slider .controls label {
+.promo-slider-controls label {
   display: inline-block;
+  vertical-align: middle;
   width: 6px;
   height: 6px;
   margin: 0 5px;
   border: 2px solid #ffffff;
   border-radius: 50%;
   background-color: #ffffff;
-  vertical-align: middle;
   cursor: pointer;
 }
 
@@ -1046,8 +1048,8 @@ h4 {
   display: none;
 }
 
-#btn-1:checked ~ .controls label[for="btn-1"],
-#btn-2:checked ~ .controls label[for="btn-2"] {
+#btn-1:checked ~ .promo-slider-controls label[for="btn-1"],
+#btn-2:checked ~ .promo-slider-controls label[for="btn-2"] {
   background-color: #ee3643;
 }
 
@@ -1113,10 +1115,11 @@ h4 {
   min-height: 316px;
   border: 1px solid #e5e5e5;
   display: inline-block;
+  vertical-align: top;
   margin-bottom: 20px;
   margin-right: 20px;
   text-align: center;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-weight: bold;
 }
 
@@ -1277,14 +1280,13 @@ h4 {
 }
 
 .brands {
-  padding-bottom: 70px;
+  padding-bottom: 65px;
 }
 
 .brands .items {
   padding: 0;
   font-size: 0;
   text-align: center;
-  vertical-align: middle;
 }
 
 .brands .item {
@@ -1292,14 +1294,20 @@ h4 {
   width: 218px;
   height: 145px;
   display: inline-block;
+  vertical-align: top;
   margin-right: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   font-size: 18px;
   border: 1px solid #e7e7e7;
 }
 
 .brands .item:hover {
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.5);
+}
+
+.brands .item:active {
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.5);
+  opacity: 0.3;
 }
 
 .brands img {
@@ -1317,7 +1325,7 @@ h4 {
 
 .servise p,
 .about-us p {
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 13px;
   line-height: 24px;
 }
@@ -1363,7 +1371,7 @@ h4 {
   padding-bottom: 105px;
 }
 
-.servise-slider .controls {
+.servise-slider-controls {
   position: relative;
   float: left;
   width: 240px;
@@ -1423,7 +1431,7 @@ h4 {
   margin: 0;
 }
 
-.servise-slider .controls::after {
+.servise-slider-controls::after {
   content: "";
   position: absolute;
   width: 10px;
@@ -1438,9 +1446,9 @@ h4 {
   display: none;
 }
 
-#btn-delivery:checked ~ .controls label[for="btn-delivery"],
-#btn-guarantee:checked ~ .controls label[for="btn-guarantee"],
-#btn-credit:checked ~ .controls label[for="btn-credit"] {
+#btn-delivery:checked ~ .servise-slider-controls label[for="btn-delivery"],
+#btn-guarantee:checked ~ .servise-slider-controls label[for="btn-guarantee"],
+#btn-credit:checked ~ .servise-slider-controls label[for="btn-credit"] {
   background-color: #ffffff;
   border-color: #ffffff;
   color: #32425c;
