@@ -1048,8 +1048,8 @@ h4 {
   display: none;
 }
 
-#btn-1:checked ~ .promo-slider-controls label[for="btn-1"],
-#btn-2:checked ~ .promo-slider-controls label[for="btn-2"] {
+.btn-1:checked ~ .promo-slider-controls label[for="btn-1"],
+.btn-2:checked ~ .promo-slider-controls label[for="btn-2"] {
   background-color: #ee3643;
 }
 
@@ -1057,8 +1057,8 @@ h4 {
   display: none;
 }
 
-#btn-1:checked ~ .promo-slides .promo-slide:nth-child(1),
-#btn-2:checked ~ .promo-slides .promo-slide:nth-child(2) {
+.btn-1:checked ~ .promo-slides .promo-slide:nth-child(1),
+.btn-2:checked ~ .promo-slides .promo-slide:nth-child(2) {
   display: block;
 }
 
@@ -1446,9 +1446,9 @@ h4 {
   display: none;
 }
 
-#btn-delivery:checked ~ .servise-slider-controls label[for="btn-delivery"],
-#btn-guarantee:checked ~ .servise-slider-controls label[for="btn-guarantee"],
-#btn-credit:checked ~ .servise-slider-controls label[for="btn-credit"] {
+.btn-delivery:checked ~ .servise-slider-controls label[for="btn-delivery"],
+.btn-guarantee:checked ~ .servise-slider-controls label[for="btn-guarantee"],
+.btn-credit:checked ~ .servise-slider-controls label[for="btn-credit"] {
   background-color: #ffffff;
   border-color: #ffffff;
   color: #32425c;
@@ -1458,9 +1458,9 @@ h4 {
   display: none;
 }
 
-#btn-delivery:checked ~ .servise-slides .delivery,
-#btn-guarantee:checked ~ .servise-slides .guarantee,
-#btn-credit:checked ~ .servise-slides .credit{
+.btn-delivery:checked ~ .servise-slides .delivery,
+.btn-guarantee:checked ~ .servise-slides .guarantee,
+.btn-credit:checked ~ .servise-slides .credit{
   display: block;
 }
 
